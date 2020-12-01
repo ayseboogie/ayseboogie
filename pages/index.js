@@ -1,17 +1,17 @@
 import React from "react";
-
 import { useRouter } from 'next/router'
+import Header from "./components/header.jsx";
 
 
 export default function Home() {
     const router = useRouter()
-    const Fall = "/Fall.png";
 
   return (
-      <div className="image">
-{/*<img src={Fall} />*/}
-     <div>My site</div>
-        <span onClick={() => router.push('/contact')}>Click me</span>
+      <React.Fragment>
+      <Header />
+      <div className="flex flex-col flex-wrap justify-center">
+     <header className="text-lg text-center">Ayse . Site</header>
+        <div className="" onClick={() => router.push('/contact')}>Click me</div>
       <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -22,20 +22,7 @@ export default function Home() {
           <img src="/vercel.svg" alt="Vercel Logo" className="logo" />
         </a>
       </footer>
-        <style jsx>
-            {`
-          .image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            left: 0;
-            height: 100%;
-            background-size: cover;
-            background-position: center;
-            background-image: url(${Fall});
-          }
-        `}
-        </style>
-    </div>
+      </div>
+      </React.Fragment>
   )
 }

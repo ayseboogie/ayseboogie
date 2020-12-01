@@ -1,14 +1,12 @@
 import React, { useState } from "react";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import NavDropdown from "react-bootstrap/NavDropdown";
 import Link from "next/link";
 
 function header() {
     const [isExpanded, toggleExpansion] = useState(false);
-
+    const Sunrise = "/Sunrise.png";
     return (
-        <nav className="flex items-center justify-between flex-wrap bg-black p-6">
+        <div className="image top-0 left-0 right-0 bg-cover bg-center h-80">
+        <nav className="flex items-center justify-between flex-wrap p-6">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
                 {/* put logo here */}
                 <span className="font-semibold text-xl tracking-tight">"artists"</span>
@@ -52,6 +50,14 @@ function header() {
                 </div>
             </div>
         </nav>
+            <style jsx>
+                {`
+          .image {
+            background-image: url(${Sunrise});
+          }
+        `}
+            </style>
+        </div>
     );
 }
 
